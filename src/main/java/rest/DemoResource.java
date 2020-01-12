@@ -36,12 +36,12 @@ public class DemoResource {
     @Context
     SecurityContext securityContext;
 
-    // @GET
-    // @Produces(MediaType.APPLICATION_JSON)
-    // public String getInfoForAll() {
-    //     return "{\"msg\":\"Hello anonymous\"}";
-    // }
-
+    @GET
+    @Path("hello")     
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getInfoForAll() {
+        return "{\"msg\":\"Hello anonymous\"}";
+    }
 
     @GET
     @Path("/{categories}")

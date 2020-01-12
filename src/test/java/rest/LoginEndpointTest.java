@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import utils.EMF_Creator;
 
-@Disabled
+//@Disabled
 public class LoginEndpointTest {
 
     private static final int SERVER_PORT = 7777;
@@ -112,7 +112,7 @@ public class LoginEndpointTest {
   @Test
   public void serverIsRunning() {
     System.out.println("Testing is server UP");
-    given().when().get("/info").then().statusCode(200);
+    given().when().get("/jokeByCategory/hello").then().statusCode(200);
   }
 
   @Test
@@ -120,7 +120,7 @@ public class LoginEndpointTest {
     given()
             .contentType("application/json")
             .when()
-            .get("/info").then()
+            .get("/jokeByCategory/hello").then()
             .statusCode(200)
             .body("msg", equalTo("Hello anonymous"));
   }
